@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Nomade Pro — Documentation</title>
+    <meta name="description" content="Documentation for Nomade Pro" />
+    <style>
+        :root{
+            --bg:#0f1720; --card:#0b1220; --muted:#9aa4b2; --accent:#60a5fa; --text:#e6eef6;
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        }
+        *{box-sizing:border-box}
+        html,body{height:100%;margin:0;background:linear-gradient(180deg,#071027 0%,#071427 100%);color:var(--text)}
+        .app{display:flex;min-height:100vh}
+        nav.sidebar{
+            width:260px;padding:24px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);
+            border-right:1px solid rgba(255,255,255,0.03);backdrop-filter:blur(6px)
+        }
+        nav h1{font-size:16px;margin:0 0 12px;color:var(--accent)}
+        nav input{width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:var(--text)}
+        nav ul{list-style:none;padding:12px 0 0;margin:0}
+        nav a{display:block;padding:8px 10px;border-radius:6px;color:var(--muted);text-decoration:none;font-size:14px}
+        nav a:hover{background:rgba(255,255,255,0.02);color:var(--text)}
+        main{
+            flex:1;padding:36px;max-width:980px;margin:0 auto;
+        }
+        header{display:flex;align-items:center;gap:16px;margin-bottom:24px}
+        header h2{margin:0;font-weight:600}
+        .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+        pre{background:#071427;padding:12px;border-radius:8px;overflow:auto;color:var(--muted);font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace}
+        footer{margin-top:28px;color:var(--muted);font-size:13px;text-align:center}
+        @media (max-width:800px){
+            .app{flex-direction:column}
+            nav.sidebar{width:100%;display:flex;gap:12px;overflow:auto}
+            main{padding:20px}
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <nav class="sidebar" aria-label="Documentation navigation">
+            <h1>Nomade Pro</h1>
+            <input type="search" placeholder="Search docs…" aria-label="Search docs" />
+            <ul>
+                <li><a href="#getting-started">Getting started</a></li>
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#usage">Usage</a></li>
+                <li><a href="#api">API</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <header>
+                <div>
+                    <h2 id="getting-started">Getting started</h2>
+                    <p style="margin:6px 0 0;color:var(--muted)">Quick start guide for Nomade Pro</p>
+                </div>
+            </header>
+
+            <section class="card" id="installation" aria-labelledby="installation">
+                <h3 style="margin-top:0">Installation</h3>
+                <p style="color:var(--muted)">Install via npm or include the script:</p>
+                <pre>
+// npm
+npm install nomadepro
+
+// CDN
+&lt;script src="https://cdn.example.com/nomadepro.min.js"&gt;&lt;/script&gt;
+                </pre>
+            </section>
+
+            <section class="card" id="usage" style="margin-top:16px">
+                <h3>Usage</h3>
+                <p style="color:var(--muted)">Basic example to initialize the library:</p>
+                <pre>
+&lt;script&gt;
+    import NomadePro from 'nomadepro'
+
+    const app = new NomadePro({ container: '#app' })
+    app.start()
+&lt;/script&gt;
+                </pre>
+            </section>
+
+            <section class="card" id="api" style="margin-top:16px">
+                <h3>API</h3>
+                <p style="color:var(--muted)">Common methods and options:</p>
+                <pre>
+new NomadePro(options)
+.start()
+.stop()
+.on('event', handler)
+                </pre>
+            </section>
+
+            <footer>
+                <div>© Nomade Pro — Documentation · Built with a minimal template</div>
+            </footer>
+        </main>
+    </div>
+</body>
+</html>
